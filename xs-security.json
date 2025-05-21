@@ -1,0 +1,70 @@
+{
+  "xsappname": "mycapapp",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Display",
+      "description": "display"
+    },
+    {
+      "name": "$XSAPPNAME.Edit",
+      "description": "edit"
+    },
+    {
+      "name": "$XSAPPNAME.Boost",
+      "description": "boost"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "Country",
+      "description": "Country",
+      "valueType": "string"
+    },
+    {
+      "name": "BankName",
+      "description": "BankName",
+      "valueType": "String"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Access Read-Only Data",
+      "default-role-name": "Viewer: Authorized to Read All Data",
+      "scope-references": [
+        "$XSAPPNAME.Display"
+      ],
+      "attribute-references": [
+        {
+          "name": "Country",
+          "default-values": [
+            "GB"
+          ] 
+        },
+        {
+          "name": "BankName",
+          "default-values": [
+          ] 
+        }
+      ]
+    },
+    {
+      "name": "Editor",
+      "description": "Edit and boost the purchase order",
+      "scope-references": [
+        "$XSAPPNAME.Edit",
+        "$XSAPPNAME.Boost"
+      ]
+    }
+  ],
+  "authorities": [
+    "$ACCEPT_GRANTED_AUTHORITIES"
+  ],
+  "oauth2-configuration": {
+    "token-validity": 900,
+    "redirect-uris": [
+      "https://*.cfapps.us10-001.hana.ondemant.com/login/callback"
+    ]
+  },
+  "xsenableasyncservice": "true" 
+}
