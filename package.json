@@ -8,7 +8,8 @@
   "dependencies": {
     "@sap/cds": "^8",
     "express": "^4",
-    "@sap/xssec": "^4"
+    "@sap/xssec": "^4",
+    "@cap-js/hana": "^1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -27,22 +28,40 @@
           "strategy": "mocked",
           "users": {
             "jitendra": {
-              "roles": ["Viewer"],
+              "roles": [
+                "Viewer"
+              ],
               "userAttributes": {
-                "BankName": ["My Bank of London"],
-                "Country": ["GB"]
+                "BankName": [
+                  "My Bank of London"
+                ],
+                "Country": [
+                  "GB"
+                ]
               }
             },
             "jitu": {
-              "roles": ["Viewer","Editor"],
+              "roles": [
+                "Viewer",
+                "Editor"
+              ],
               "userAttributes": {
-                "BankName": ["My Bank of London"],
-                "Country": ["US","IN","JP"]
+                "BankName": [
+                  "My Bank of London"
+                ],
+                "Country": [
+                  "US",
+                  "IN",
+                  "JP"
+                ]
               }
             }
           }
         }
       }
+    },
+    "sql": {
+      "native_hana_associations": false
     }
   }
 }
