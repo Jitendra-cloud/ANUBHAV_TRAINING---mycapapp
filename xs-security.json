@@ -26,12 +26,12 @@
     {
       "name": "Country",
       "description": "Country",
-      "valueType": "String"
+      "valueType": "string"
     },
     {
       "name": "BankName",
       "description": "BankName",
-      "valueType": "String"
+      "valueType": "string"
     }
   ],
   "role-templates": [
