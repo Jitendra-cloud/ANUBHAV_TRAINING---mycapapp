@@ -25,6 +25,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: mycapapp-db
+      - name: mycapapp-auth
 
   - name: mycapapp-db-deployer
     type: hdb
@@ -40,3 +41,12 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+  - name: mycapapp-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: mycapapp-${org}-${space}
+        tenant-mode: dedicated

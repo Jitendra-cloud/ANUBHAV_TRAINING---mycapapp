@@ -12,6 +12,14 @@
     {
       "name": "$XSAPPNAME.Boost",
       "description": "boost"
+    },
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Viewer"
+    },
+    {
+      "name": "$XSAPPNAME.Editor",
+      "description": "Editor"
     }
   ],
   "attributes": [
@@ -39,12 +47,11 @@
           "name": "Country",
           "default-values": [
             "GB"
-          ] 
+          ]
         },
         {
           "name": "BankName",
-          "default-values": [
-          ] 
+          "default-values": []
         }
       ]
     },
@@ -66,5 +73,5 @@
       "https://*.cfapps.us10-001.hana.ondemant.com/login/callback"
     ]
   },
-  "xsenableasyncservice": "true" 
+  "xsenableasyncservice": "true"
 }
