@@ -26,7 +26,7 @@
     {
       "name": "Country",
       "description": "Country",
-      "valueType": "string"
+      "valueType": "String"
     },
     {
       "name": "BankName",
